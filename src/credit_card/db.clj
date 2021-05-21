@@ -1,6 +1,5 @@
 (ns credit-card.db
-  (:require [credit-card.models :as cc.models]
-            [credit-card.schemas :as cc.schemas]
+  (:require [credit-card.schemas :as cc.schemas]
             [datomic.api :as d]))
 
 (def db-uri "datomic:dev://localhost:4334/bank")

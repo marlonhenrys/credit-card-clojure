@@ -1,11 +1,11 @@
 (ns credit-card.core
-  (:require [credit-card.mockups :as cc.mocks]
+  (:require [credit-card.mocks :as cc.mocks]
             [credit-card.models :as cc.models]
             [credit-card.db :as cc.db])
   (:use [clojure pprint]))
 
-;(cc.db/init-db!)
-(cc.db/reset-db!)
+(cc.db/init-db!)
+;(cc.db/reset-db!)
 
 (def user (cc.models/new-user "123.456.789-10" "Marlon Henrique" "marlon@henrique.com.br"))
 (def card (cc.models/new-card "1010202030304040" "123" "2023-06-01T00:00:00" 3050))
@@ -28,6 +28,4 @@
 (map pprint ["User with card:" (cc.db/get-user-with-card "123.456.789-10")
              "Search by Merchant:" (cc.db/search-purchase-by :purchase/merchant "Netflix")
              "Search by Amount:" (cc.db/search-purchase-by :purchase/amount 30)
-             "Max purchase amount" (cc.db/max-purchase-amount)])
-
-
+             "Max Purchase Amount:" (cc.db/max-purchase-amount)])

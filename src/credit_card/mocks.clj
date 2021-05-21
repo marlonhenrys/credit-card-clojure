@@ -1,4 +1,4 @@
-(ns credit-card.mockups
+(ns credit-card.mocks
   (:require [credit-card.models :as cc.models]))
 
 (def categories [[:service "Serviço"]
